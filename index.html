@@ -148,7 +148,7 @@ background-image:linear-gradient(90deg,transparent 49.6%,rgba(74,58,120,.08) 50%
 .load{display:inline-block;width:16px;height:16px;border:3px solid var(--pink);border-top-color:var(--pk);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px;margin-right:6px}
 @keyframes sp{to{transform:rotate(360deg)}}
 nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(10px + env(safe-area-inset-bottom,0px));width:min(620px,calc(100% - 20px));z-index:50;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:0;border-radius:26px;display:flex;justify-content:space-around;padding:5px 4px;box-shadow:0 10px 30px var(--glow2)}
-nav button{background:none;border:0;font-size:11px;font-weight:700;text-align:center;padding:5px 6px;border-radius:16px;color:var(--mut);min-width:46px;cursor:pointer;transition:background .2s}
+nav button{background:none;border:0;font-size:10.5px;font-weight:700;text-align:center;padding:5px 6px;border-radius:16px;color:var(--mut);min-width:40px;cursor:pointer;line-height:1.15;transition:background .2s}
 nav button.on{background:linear-gradient(135deg,var(--pink),var(--lav));color:var(--ink)}
 nav span{display:flex;justify-content:center;margin-bottom:1px}
 .cf{position:fixed;top:-14px;width:9px;height:9px;z-index:300;pointer-events:none;animation:fall 1.9s linear forwards}
@@ -267,7 +267,8 @@ const money=n=>'BND '+(+n).toFixed(2);
 const ic=p=>`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
 const SPK='<svg class="sp" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z"/></svg>';
 const H2=t=>`<h2>${t.startsWith('<span class="qn"')?'':SPK}${t}</h2>`;
-const TABS=[['decide',ic('<path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 3v18M3.5 9h17M3.5 15h17"/>'),'Decide'],
+const TABS=[['decide',ic('<path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 3v18M3.5 9h17M3.5 15h17"/>'),'Main Meal'],
+['sweet',ic('<path d="M7 11a5 5 0 0110 0"/><path d="M6 11h12l-6 10z"/><path d="M12 6V4"/>'),'Dessert'],
 ['log',ic('<rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/>'),'Spend'],
 ['map',ic('<circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 000-6H9a3 3 0 010-6h6.5"/>'),'Trail'],
 ['cal',ic('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'),'Calendar'],
@@ -276,7 +277,7 @@ const TABS=[['decide',ic('<path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 3v18M3.5 
 const go=t=>{V.tab=t;render();scrollTo({top:0,behavior:'smooth'})};
 function render(){
 $('nav').innerHTML=TABS.map(t=>`<button class="${V.tab==t[0]?'on':''}" onclick="go('${t[0]}')" aria-label="${t[2]}"><span>${t[1]}</span>${t[2]}</button>`).join('');
-$('app').innerHTML=({decide,log,map,cal,rota,disc})[V.tab]();vines();hearts();
+$('app').innerHTML=({decide,sweet:dessert,log,map,cal,rota,disc})[V.tab]();vines();hearts();
 if(V.tab=='decide'){res();drawWheel(true)}
 }
 
@@ -314,8 +315,8 @@ ${V.moods.size?`<div class="active"><span>Vibe${V.moods.size>1?'s':''}: ${[...V.
 <div class="card" id="wc">${H2('<span class="qn">Step 4:</span>Now time to spin the wheel!')}<div class="wbox"><svg class="ptr" viewBox="0 0 30 34" aria-hidden="true"><path fill="currentColor" stroke="#fff" stroke-width="2.5" d="M15 32 3 10a12 12 0 1124 0z"/></svg><canvas id="wh" width="600" height="600" role="img" aria-label="Restaurant roulette wheel"></canvas></div>
 <div class="wcap" id="wcap"></div><button class="btn" id="wb" onclick="spin()" disabled>Answer the 3 questions first</button><p class="need" id="wneed"></p></div>
 <div id="pk"></div>
-<div class="card"><div class="hrow">${H2('Matches <span id="cnt"></span>')}<button class="btn s pk" onclick="goAdd()">+ Add a place</button></div><div class="sbar"><input type="search" id="mq" placeholder="Search restaurants & cafés" value="${esc(V.q)}" onkeydown="if(event.key=='Enter'){event.preventDefault();doSearch()}" enterkeyhint="search"><button class="btn sbtn" onclick="doSearch()" aria-label="Search">${SRCH}<span>Search</span></button></div><div id="res"></div></div>
-<div class="card">${H2('Round two: coffee, tea or dessert')}
+<div class="card"><div class="hrow">${H2('Matches <span id="cnt"></span>')}<button class="btn s pk" onclick="goAdd()">+ Add a place</button></div><div class="sbar"><input type="search" id="mq" placeholder="Search restaurants & cafés" value="${esc(V.q)}" onkeydown="if(event.key=='Enter'){event.preventDefault();doSearch()}" enterkeyhint="search"><button class="btn sbtn" onclick="doSearch()" aria-label="Search">${SRCH}<span>Search</span></button></div><div id="res"></div></div>`}
+function dessert(){return `${modeBar()}<div class="card">${H2('Round two: coffee, tea or dessert')}
 <div>${AFT.map(c=>`<span class="chip ${V.ak.has(c)?'on':''}" onclick="V.ak.has('${c}')?V.ak.delete('${c}'):V.ak.add('${c}');render()">${c}</span>`).join('')}<span class="chip ${V.ch?'on':''}" onclick="V.ch=!V.ch;render()">Chill spots</span><span class="chip ${V.ru?'on':''}" onclick="V.ru=!V.ru;render()">Bring a reusable cup</span></div>
 <label>Max per person: <b>BND ${V.ahi}</b></label><input type="range" min="2" max="30" value="${V.ahi}" oninput="V.ahi=+this.value;this.previousElementSibling.lastElementChild.textContent='BND '+this.value">
 <div class="slot" id="slot"><span>${aftMatch().length} sweet spot${aftMatch().length==1?'':'s'} to choose from</span></div>
