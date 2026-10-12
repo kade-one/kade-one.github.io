@@ -315,7 +315,7 @@ ${V.mood>=0?`<div class="active"><span>Vibe: ${esc(CR[V.mood].t)}</span><button 
 <div class="wcap" id="wcap"></div><button class="btn" id="wb" onclick="spin()" disabled>Answer the 3 questions first</button><p class="need" id="wneed"></p></div>
 <div id="pk"></div>
 <div class="card"><div class="hrow">${H2('Matches <span id="cnt"></span>')}<button class="btn s pk" onclick="goAdd()">+ Add a place</button></div><div class="sbar"><input type="search" id="mq" placeholder="Search restaurants & cafés" value="${esc(V.q)}" onkeydown="if(event.key=='Enter'){event.preventDefault();doSearch()}" enterkeyhint="search"><button class="btn sbtn" onclick="doSearch()" aria-label="Search">${SRCH}<span>Search</span></button></div><div id="res"></div></div>
-<div class="card">${H2('Round two: coffee, tea or dessert')}<p class="hint">Because lunch is never the end of it.</p>
+<div class="card">${H2('Round two: coffee, tea or dessert')}
 <div>${AFT.map(c=>`<span class="chip ${V.ak.has(c)?'on':''}" onclick="V.ak.has('${c}')?V.ak.delete('${c}'):V.ak.add('${c}');render()">${c}</span>`).join('')}<span class="chip ${V.ch?'on':''}" onclick="V.ch=!V.ch;render()">Chill spots</span><span class="chip ${V.ru?'on':''}" onclick="V.ru=!V.ru;render()">Bring a reusable cup</span></div>
 <label>Max per person: <b>BND ${V.ahi}</b></label><input type="range" min="2" max="30" value="${V.ahi}" oninput="V.ahi=+this.value;this.previousElementSibling.lastElementChild.textContent='BND '+this.value">
 <div class="slot" id="slot"><span>${aftMatch().length} sweet spot${aftMatch().length==1?'':'s'} to choose from</span></div>
