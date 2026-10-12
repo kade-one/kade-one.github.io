@@ -3,13 +3,13 @@
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Makan Mana?"><meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&family=Mali:wght@400;500;600;700&family=Princess+Sofia&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#4a3a78;--bg2:#7d4a7e;--card:#5d4688;--ink:#fbf6ee;--mut:#e3d6ec;--blue:#4f5f9e;--pink:#9a4f86;--lav:#6d5aa0;--ac:#9fd3f5;--pk:#ffb3d1;--line:#8a6aa8;--glow:rgba(255,179,209,.18);--glow2:rgba(20,10,40,.3);--sh:0 10px 30px rgba(20,10,40,.35);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141833;--bg2:#1f2348;--card:#272d55;--ink:#fbf6ee;--mut:#c9c5dc;--blue:#2e4670;--pink:#5a3358;--lav:#3d3566;--ac:#8fd0f5;--pk:#ff9cc4;--line:#3d4570;--glow:rgba(255,156,196,.14);--glow2:rgba(143,208,245,.10);--sh:0 10px 30px rgba(0,0,0,.4)}}
 :root[data-theme="dark"]{--bg:#141833;--bg2:#1f2348;--card:#272d55;--ink:#fbf6ee;--mut:#c9c5dc;--blue:#2e4670;--pink:#5a3358;--lav:#3d3566;--ac:#8fd0f5;--pk:#ff9cc4;--line:#3d4570;--glow:rgba(255,156,196,.14);--glow2:rgba(143,208,245,.10);--sh:0 10px 30px rgba(0,0,0,.4)}
 *{box-sizing:border-box}html,body{margin:0}
-body{background:linear-gradient(170deg,var(--bg) 0%,var(--bg2) 55%,var(--bg) 100%) fixed;color:var(--ink);font:17px/1.45 'Patrick Hand','Kalam',cursive;padding-bottom:96px;min-height:100vh;overflow-x:hidden}
+body{background:linear-gradient(170deg,var(--bg) 0%,var(--bg2) 55%,var(--bg) 100%) fixed;color:var(--ink);font:500 15.5px/1.5 'Mali',cursive;padding-bottom:96px;min-height:100vh;overflow-x:hidden}
 .sky{position:fixed;inset:0;pointer-events:none;z-index:0}
 .star{position:absolute;color:var(--pk);opacity:.0;animation:twk var(--d,4s) ease-in-out infinite;animation-delay:var(--dl,0s)}
 .star.b{color:var(--ac)}.star svg{display:block;width:100%;height:100%}
@@ -20,7 +20,7 @@ header,main,.foot{position:relative;z-index:1}
 .top{background:linear-gradient(125deg,var(--blue),var(--lav) 50%,var(--pink));padding:16px 16px 0;border-radius:0 0 44px 44px/0 0 30px 30px;overflow:hidden;position:relative;box-shadow:0 8px 30px var(--glow2)}
 .top::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.55) 0 2px,transparent 3px),radial-gradient(circle at 70% 12%,rgba(255,255,255,.6) 0 1.5px,transparent 2.5px),radial-gradient(circle at 88% 45%,rgba(255,255,255,.5) 0 2px,transparent 3px),radial-gradient(circle at 40% 35%,rgba(255,255,255,.45) 0 1.5px,transparent 2.5px);pointer-events:none}
 .top .in{max-width:640px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:nowrap;position:relative;z-index:1}
-h1{margin:0;font:600 27px 'Kalam',cursive;display:flex;align-items:center;gap:9px}
+h1{margin:0;font:400 34px/1.1 'Princess Sofia','Cherry Swash',cursive;display:flex;align-items:center;gap:9px}
 .lg{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px}
 .lg svg{width:34px;height:34px;filter:drop-shadow(0 3px 6px rgba(224,85,140,.35));animation:beat 2.4s ease-in-out infinite}
 @keyframes beat{0%,100%{transform:scale(1)}10%{transform:scale(1.12)}20%{transform:scale(1)}30%{transform:scale(1.08)}40%{transform:scale(1)}}
@@ -30,14 +30,14 @@ h1{margin:0;font:600 27px 'Kalam',cursive;display:flex;align-items:center;gap:9p
 main{max-width:640px;margin:auto;padding:4px 14px}
 .hero{position:relative;overflow:hidden;margin:16px 0 10px;padding:22px 18px 18px;border-radius:28px;background:linear-gradient(135deg,var(--pink),var(--lav) 55%,var(--blue));box-shadow:var(--sh)}
 .hero::before{content:'';position:absolute;width:180px;height:180px;right:-60px;top:-70px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.6),transparent 70%)}
-.ht{display:inline-grid;margin:0 0 10px;font:600 26px/1.2 'Kalam',cursive;position:relative}
+.ht{display:inline-grid;margin:0 0 10px;font:600 26px/1.2 'Cherry Swash',cursive;position:relative}
 .ht span{display:block}
 .ht span:first-child{font-size:34px;background:linear-gradient(90deg,var(--pk),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
 .lv{display:inline-flex;gap:6px;align-items:center;background:var(--card);border-radius:99px;padding:5px 14px;font-size:13px;font-weight:700;margin-bottom:10px;position:relative}
 .fact{background:color-mix(in srgb,var(--card) 85%,transparent);border-radius:16px;padding:10px 12px;font-size:13px;position:relative}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 4px}
 .stats div{background:var(--card);border-radius:18px;padding:10px;text-align:center;box-shadow:var(--sh)}
-.stats b{display:block;font:600 18px 'Kalam',cursive}.stats span{font-size:11px;color:var(--mut);font-weight:600}
+.stats b{display:block;font:600 18px 'Cherry Swash',cursive}.stats span{font-size:11px;color:var(--mut);font-weight:600}
 .card{position:relative;background:var(--card);border-radius:24px;padding:16px;margin:16px 0;box-shadow:var(--sh)}
 /* sparkly, glittery borders on every box */
 .stats div,.mood button,.prince,.rbox,.slot,.active,.note{position:relative}
@@ -47,7 +47,9 @@ main{max-width:640px;margin:auto;padding:4px 14px}
 .card::before{content:'';position:absolute;top:-8px;right:18px;width:17px;height:17px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffe7a3' d='M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 4px rgba(255,231,163,.9));animation:tw 2.8s ease-in-out infinite;pointer-events:none}
 .card:nth-of-type(2n)::before{right:auto;left:22px;animation-delay:-1.3s}
 .mood button{border-color:transparent}
-h2{margin:0 0 4px;font:600 19px 'Kalam',cursive;display:flex;align-items:center;gap:7px}
+/* small budget box above the cravings */
+.card.bud{padding:12px 14px 10px}.bud h2{font-size:17px}.bud .bv{font-weight:700;color:var(--pk);margin:0 0 2px}.bud small{display:block;margin-top:2px}.bud input[type=range]{height:26px}.bud .chip{padding:5px 12px;font-size:13px}
+h2{margin:0 0 4px;font:600 19px 'Cherry Swash',cursive;display:flex;align-items:center;gap:7px}
 h2 .sp{width:17px;height:17px;flex:none;color:var(--pk);animation:tw 2.6s ease-in-out infinite}
 @keyframes tw{50%{transform:scale(.7) rotate(25deg)}}
 .hint{font-size:13.5px;color:var(--mut);margin:0 0 10px}
@@ -74,19 +76,19 @@ input[type=file]{font-size:13px;max-width:100%}
 .row:last-child{border:0}
 .tag{font-size:11px;background:var(--blue);border-radius:99px;padding:2px 9px;margin-left:6px;font-weight:700;white-space:nowrap}
 .tag.p{background:var(--pink)}.tag.l{background:var(--lav)}
-.big{text-align:center;font:600 28px 'Kalam',cursive;padding:8px}
+.big{text-align:center;font:600 28px 'Cherry Swash',cursive;padding:8px}
 small{color:var(--mut)}
 .mood{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
 .mood button{border:2px solid var(--line);border-radius:20px;background:var(--bg);padding:12px 10px;text-align:left;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
 .mood button:hover{transform:translateY(-3px) rotate(-1deg);border-color:var(--pk);box-shadow:0 8px 18px var(--glow)}
 .mood button.on{background:var(--pink);border-color:var(--pk)}
-.mood b{display:block;font:600 15px/1.25 'Kalam',cursive}.mood small{display:block;margin-top:3px;font-size:12px}
+.mood b{display:block;font:600 15px/1.25 'Cherry Swash',cursive}.mood small{display:block;margin-top:3px;font-size:12px}
 .active{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--lav);border-radius:14px;padding:8px 12px;margin-top:10px;font-size:13px;font-weight:700}
 .wbox{position:relative;width:min(310px,80vw);aspect-ratio:1;margin:10px auto 4px}
 .wbox canvas{width:100%;height:100%;display:block;filter:drop-shadow(0 8px 14px rgba(224,85,140,.25))}
 .ptr{position:absolute;top:-10px;left:50%;margin-left:-15px;z-index:2;width:30px;height:34px;color:var(--pk);filter:drop-shadow(0 2px 3px rgba(47,53,80,.3))}
 .wcap{text-align:center;font-size:13px;color:var(--mut);font-weight:600}
-.slot{height:60px;overflow:hidden;border-radius:18px;background:linear-gradient(135deg,var(--blue),var(--pink));display:flex;align-items:center;justify-content:center;font:600 21px 'Kalam',cursive;margin-top:12px;text-align:center;padding:0 10px}
+.slot{height:60px;overflow:hidden;border-radius:18px;background:linear-gradient(135deg,var(--blue),var(--pink));display:flex;align-items:center;justify-content:center;font:600 21px 'Cherry Swash',cursive;margin-top:12px;text-align:center;padding:0 10px}
 .slot.go span{animation:roll .12s linear infinite}
 @keyframes roll{from{transform:translateY(-30%);opacity:.3}to{transform:translateY(30%);opacity:.9}}
 .pie{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:10px}
@@ -129,7 +131,7 @@ nav span{display:flex;justify-content:center;margin-bottom:1px}
 .sheet .x{position:absolute;right:12px;top:10px;width:36px;height:36px;border:0;border-radius:50%;background:var(--bg);font-size:22px;cursor:pointer;color:var(--mut)}
 .sheet h2{padding-right:40px}.sacts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.hi{color:var(--pk);display:inline-flex}
 .rbox{background:linear-gradient(160deg,var(--pink),var(--lav),var(--blue));border-radius:20px;padding:14px}
-.ravg{display:flex;align-items:center;gap:10px}.ravg b{font:600 40px/1 'Kalam',cursive}.ravg span{font-size:12.5px;font-weight:700;color:var(--mut)}
+.ravg{display:flex;align-items:center;gap:10px}.ravg b{font:600 40px/1 'Cherry Swash',cursive}.ravg span{font-size:12.5px;font-weight:700;color:var(--mut)}
 .r10{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}.r10 button{min-height:40px;border:2px solid transparent;border-radius:12px;background:var(--card);font-weight:800;cursor:pointer;padding:0}
 .r10 button.on{background:var(--pk);color:#fff;transform:scale(1.08)}.r10 button:disabled{opacity:.45;cursor:default}
 .rlist{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:12px;font-size:13px}.rlist span{display:inline-flex;align-items:center;gap:2px}.rlist b{margin-left:4px}
@@ -142,12 +144,12 @@ nav span{display:flex;justify-content:center;margin-bottom:1px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 #mwalk{position:fixed;left:0;top:0;width:78px;height:111px;z-index:44;pointer-events:none;will-change:transform;transform-origin:50% 100%}
 #mwalk img{width:100%;height:100%;display:block;pointer-events:auto;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;filter:drop-shadow(0 8px 6px rgba(47,53,80,.22))}
-#mwalk .mb{position:absolute;left:50%;bottom:100%;transform:translate(-50%,0) scale(.6);opacity:0;background:var(--card);color:var(--ink);font:600 13px/1.2 'Kalam',cursive;padding:6px 11px;border-radius:14px;white-space:nowrap;box-shadow:0 4px 12px rgba(224,85,140,.3);transition:opacity .2s,transform .2s;pointer-events:none}#mwalk .mb.on{opacity:1;transform:translate(-50%,-4px) scale(1)}
+#mwalk .mb{position:absolute;left:50%;bottom:100%;transform:translate(-50%,0) scale(.6);opacity:0;background:var(--card);color:var(--ink);font:600 13px/1.2 'Cherry Swash',cursive;padding:6px 11px;border-radius:14px;white-space:nowrap;box-shadow:0 4px 12px rgba(224,85,140,.3);transition:opacity .2s,transform .2s;pointer-events:none}#mwalk .mb.on{opacity:1;transform:translate(-50%,-4px) scale(1)}
 #mas{position:fixed;left:0;top:0;width:91px;height:130px;z-index:45;pointer-events:none;will-change:transform}
 #mas.held,#mwalk.held{z-index:60}#mas.held img,#mwalk.held img{cursor:grabbing;filter:drop-shadow(0 18px 14px rgba(47,53,80,.3))}
 #mas img,#mwalk img{touch-action:none}
 #mas img{width:100%;height:100%;display:block;pointer-events:auto;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;filter:drop-shadow(0 6px 10px rgba(47,53,80,.25))}
-#mas .mb{position:absolute;left:50%;bottom:100%;transform:translate(-50%,0) scale(.6);opacity:0;background:var(--card);color:var(--ink);font:600 13px/1.2 'Kalam',cursive;padding:6px 11px;border-radius:14px;white-space:nowrap;box-shadow:0 4px 12px rgba(224,85,140,.3);transition:opacity .2s,transform .2s;pointer-events:none}
+#mas .mb{position:absolute;left:50%;bottom:100%;transform:translate(-50%,0) scale(.6);opacity:0;background:var(--card);color:var(--ink);font:600 13px/1.2 'Cherry Swash',cursive;padding:6px 11px;border-radius:14px;white-space:nowrap;box-shadow:0 4px 12px rgba(224,85,140,.3);transition:opacity .2s,transform .2s;pointer-events:none}
 #mas .mb.on{opacity:1;transform:translate(-50%,-4px) scale(1)}
 #mas .mb::after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:0;border-top-color:var(--card)}
 </style></head><body>
@@ -264,8 +266,8 @@ const CR=[
 {t:'Night Owls',s:'Open past 12am',late:true},
 {t:'Crew Approved',s:'Places we gave a thumbs up',fav:true},
 {t:'Let Fate Decide',s:'Anything goes'}];
-function crave(i){const m=CR[i];V.mood=i;V.cu=new Set(m.cu||[]);V.lo=m.lo||0;V.hi=m.hi||60;V.adv=!!m.adv;V.late=!!m.late;V.fav=!!m.fav;V.q='';V.unv=V.gm=V.nw=V.try=false;render();setTimeout(()=>{$('wc').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(spin,500)},60)}
-function clearMood(){V.mood=-1;V.cu=new Set();V.lo=0;V.hi=60;V.adv=V.late=V.fav=false;render()}
+function crave(i){const m=CR[i];V.mood=i;V.cu=new Set(m.cu||[]);if(m.lo!=null||m.hi!=null){V.lo=m.lo||0;V.hi=m.hi||60};V.adv=!!m.adv;V.late=!!m.late;V.fav=!!m.fav;V.q='';V.unv=V.gm=V.nw=V.try=false;render();setTimeout(()=>{$('wc').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(spin,500)},60)}
+function clearMood(){V.mood=-1;V.cu=new Set();V.adv=V.late=V.fav=false;render()}
 
 /* ---------- DECIDE ---------- */
 function hero(){const n=S.logs.length,cu=new Set(S.logs.map(x=>(byId(x.r)||{}).c).filter(Boolean)).size;
@@ -273,14 +275,14 @@ return `<div class="hero"><h2 class="ht"><span>Lapar?</span><span>Let's hunt, Fo
 <div class="fact"><b>Did you know?</b> <span id="factx">${FACTS[FI<0?(FI=Math.floor(Math.random()*FACTS.length)):FI]}</span></div></div>`}
 function decide(){const mm=S.logs.filter(l=>l.d.startsWith(td().slice(0,7)));
 return `${modeBar()}${hero()}<div class="stats"><div><b>${mm.length}</b><span>outings this month</span></div><div><b>$${mm.reduce((a,l)=>a+l.amt,0).toFixed(0)}</b><span>spent this month</span></div><div><b>${all().length}</b><span>spots saved</span></div></div>
+<div class="card bud">${H2('First set a budget for today')}<div class="bv" id="pl"></div>
+<small>Min</small><input type="range" min="0" max="60" value="${V.lo}" oninput="V.lo=Math.min(+this.value,V.hi);this.value=V.lo;V.mood=-1;res()">
+<small>Max</small><input type="range" min="0" max="60" value="${V.hi}" oninput="V.hi=Math.max(+this.value,V.lo);this.value=V.hi;V.mood=-1;res()">
+<div>${TIERS.map((x,i)=>`<span class="chip ${V.lo==x[1]&&V.hi==x[2]?'on':''}" onclick="tier(${i})">${x[0]}</span>`).join('')}</div></div>
 <div class="card">${H2('What are you craving?')}<p class="hint">Pick a mood and the wheel spins for you.</p>
 <div class="mood">${CR.map((c,i)=>`<button class="${V.mood==i?'on':''}" onclick="crave(${i})"><b>${c.t}</b><small>${c.s}</small></button>`).join('')}</div></div>
 <div class="card">${H2('Where shall we eat?')}<p class="hint">Fine-tune it. The wheel below updates as you change these.</p>
 <input type="text" id="q1" placeholder="Search name, cuisine or area" value="${esc(V.q)}" oninput="V.q=this.value;const m=$('mq');if(m)m.value=this.value;res()">
-<label>Budget per person: <b id="pl"></b></label>
-<small>Min</small><input type="range" min="0" max="60" value="${V.lo}" oninput="V.lo=Math.min(+this.value,V.hi);this.value=V.lo;V.mood=-1;res()">
-<small>Max</small><input type="range" min="0" max="60" value="${V.hi}" oninput="V.hi=Math.max(+this.value,V.lo);this.value=V.hi;V.mood=-1;res()">
-<div>${TIERS.map((x,i)=>`<span class="chip ${V.lo==x[1]&&V.hi==x[2]?'on':''}" onclick="tier(${i})">${x[0]}</span>`).join('')}</div>
 <label>Cuisine (none = anything)</label>
 <div>${CU.map(c=>`<span class="chip ${V.cu.has(c)?'on':''}" onclick="tg('${c}')">${c}</span>`).join('')}</div>
 <label>Extras</label>
@@ -316,12 +318,12 @@ if(key!==W.key||force&&!W.items.length){W.key=key;W.items=m.length>12?m.slice().
 const cap=$('wcap');if(cap)cap.textContent=m.length?`${W.items.length}${m.length>W.items.length?' of '+m.length:''} spot${m.length==1?'':'s'} on the wheel · BND ${V.lo}–${V.hi}${V.hi==60?'+':''}${V.cu.size?' · '+[...V.cu].join(', '):''}`:'No spots match these filters yet';
 const x=c.getContext('2d'),R=300,n=W.items.length;x.clearRect(0,0,600,600);
 c.style.transition='none';c.style.transform='rotate('+W.rot+'rad)';
-if(!n){x.fillStyle='#3d3566';x.beginPath();x.arc(R,R,R-10,0,7);x.fill();x.fillStyle='#e3d6ec';x.font='30px "Patrick Hand",cursive';x.textAlign='center';x.fillText('No matches',R,R+10);return}
+if(!n){x.fillStyle='#3d3566';x.beginPath();x.arc(R,R,R-10,0,7);x.fill();x.fillStyle='#e3d6ec';x.font='600 28px Mali,cursive';x.textAlign='center';x.fillText('No matches',R,R+10);return}
 const a=2*Math.PI/n;
 for(let i=0;i<n;i++){const s0=-Math.PI/2+i*a;x.beginPath();x.moveTo(R,R);x.arc(R,R,R-12,s0,s0+a);x.closePath();
 x.fillStyle=WC[(i==n-1&&n>1&&(n-1)%3==0)?3:i%3];x.fill();x.lineWidth=4;x.strokeStyle='#fff';x.stroke();
-x.save();x.translate(R,R);x.rotate(s0+a/2);x.textAlign='right';x.fillStyle='#fbf6ee';x.textBaseline='middle';const mw=R-36-58;let t=W.items[i].n,fs=n>8?24:28;x.font=fs+'px "Patrick Hand",cursive';
-while(x.measureText(t).width>mw&&fs>19){fs--;x.font=fs+'px "Patrick Hand",cursive'}
+x.save();x.translate(R,R);x.rotate(s0+a/2);x.textAlign='right';x.fillStyle='#fbf6ee';x.textBaseline='middle';const mw=R-36-58;let t=W.items[i].n,fs=n>8?24:28;x.font='600 '+(fs-2)+'px Mali,cursive';
+while(x.measureText(t).width>mw&&fs>19){fs--;x.font='600 '+(fs-2)+'px Mali,cursive'}
 while(x.measureText(t).width>mw&&t.length>3)t=t.slice(0,-2)+'…';x.fillText(t,R-36,0);x.restore()}
 x.beginPath();x.arc(R,R,R-8,0,7);x.lineWidth=12;x.strokeStyle='#f08ab3';x.stroke();
 for(let i=0;i<24;i++){const g=i*Math.PI/12;x.beginPath();x.arc(R+Math.cos(g)*(R-8),R+Math.sin(g)*(R-8),4,0,7);x.fillStyle=i%2?'#ffffff':'#cfe8fa';x.fill()}
