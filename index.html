@@ -295,7 +295,7 @@ return `<div class="hero"><h2 class="ht"><span>Lapar?</span><span>Let's hunt, Fo
 <div class="fact"><b>Did you know?</b> <span id="factx">${FACTS[FI<0?(FI=Math.floor(Math.random()*FACTS.length)):FI]}</span></div></div>`}
 function stats(){const mm=S.logs.filter(l=>l.d.startsWith(td().slice(0,7)));return `<div class="stats"><div><b>${mm.length}</b><span>outings this month</span></div><div><b>$${mm.reduce((a,l)=>a+l.amt,0).toFixed(0)}</b><span>spent this month</span></div><div><b>${all().length}</b><span>spots saved</span></div></div>`}
 function decide(){
-return `${modeBar()}${hero()}<p class="intro">Answer these 3 questions to use the roulette wheel below</p>
+return `${modeBar()}${hero()}<p class="intro">Answer these 3 questions<br>to use the roulette wheel below</p>
 <div class="card bud">${H2('<span class="qn" id="qn1">1</span>What’s today’s budget?')}<div class="bv" id="pl"></div>
 <small>Min</small><input type="range" min="0" max="60" value="${V.lo}" oninput="V.lo=Math.min(+this.value,V.hi);this.value=V.lo;V.a1=true;res()">
 <small>Max</small><input type="range" min="0" max="60" value="${V.hi}" oninput="V.hi=Math.max(+this.value,V.lo);this.value=V.hi;V.a1=true;res()">
