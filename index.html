@@ -98,7 +98,7 @@ small{color:var(--mut)}
 .mood em{display:inline-block;font-style:normal;font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;background:color-mix(in srgb,var(--vc) 30%,transparent);border:1px solid color-mix(in srgb,var(--vc) 60%,transparent)}
 .mood small{display:block;margin-top:6px;font-size:13px;line-height:1.45;color:var(--mut)}
 .intro{text-align:center;font:600 16px/1.4 'Berkshire Swash',serif;margin:14px 8px 4px}
-.qn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;flex:none;border-radius:50%;background:linear-gradient(135deg,var(--pk),var(--ac));color:#2a2350;font:700 13px 'Quicksand',sans-serif;font-style:normal}
+.qn{flex:none;color:var(--pk)}.qk{display:none;align-items:center;justify-content:center;width:20px;height:20px;flex:none;border-radius:50%;background:linear-gradient(135deg,#8fe0b0,#7cc4ee);color:#fff;font:700 12px 'Quicksand',sans-serif;text-shadow:none}.qk.on{display:inline-flex}
 .active{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--lav);border-radius:14px;padding:8px 12px;margin-top:10px;font-size:13px;font-weight:700}
 .wbox{position:relative;width:min(310px,80vw);aspect-ratio:1;margin:10px auto 4px}
 .wsp{position:absolute;left:50%;top:50%;pointer-events:none;z-index:3;filter:drop-shadow(0 0 2px rgba(231,121,159,.9)) drop-shadow(0 0 5px #fff)}.wsp.fixed{position:fixed;z-index:420}.wsp svg,.fsp svg{display:block;width:100%;height:100%}
@@ -106,10 +106,10 @@ small{color:var(--mut)}
 .paperbg{position:fixed;inset:0;z-index:440;background:rgba(20,16,40,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px}
 .paper{width:min(340px,100%);background:#fffaf2;color:#4a3a78;border-radius:6px;padding:22px 20px 18px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.4);
 background-image:linear-gradient(90deg,transparent 49.6%,rgba(74,58,120,.08) 50%,transparent 50.4%),linear-gradient(transparent 49.4%,rgba(74,58,120,.07) 50%,transparent 50.6%);transform-origin:50% 50%;animation:unfold .65s cubic-bezier(.2,.8,.3,1.1)}
-.ifn{margin:-2px 0 8px 31px;font-weight:600}
+.ifn{margin:-2px 0 8px;font-weight:600}
 #wb:disabled{background:color-mix(in srgb,var(--mut) 22%,var(--card));color:var(--mut);box-shadow:none;opacity:1;cursor:not-allowed}#wb:disabled::after{display:none}
 .need{text-align:center;font-size:13px;line-height:1.55;font-weight:600;color:var(--pk);margin:8px 0 0}.need:empty{display:none}
-.qn.ok{background:linear-gradient(135deg,#8fe0b0,#7cc4ee)}.chip.done{border-style:dashed}
+.chip.done{border-style:dashed}
 .paper .pk1{margin:0 0 8px;font:600 14px 'Berkshire Swash',serif;color:#b0507f}.paper b{display:block;font:700 28px/1.15 'Berkshire Swash',serif;margin-bottom:6px}.paper small{display:block;color:#6b5a8e;font-weight:600}
 .paper .btn.s{color:#4a3a78;background:#efe7fb;margin-top:10px;width:100%;justify-content:center}
 @keyframes unfold{0%{transform:perspective(700px) rotateX(85deg) scale(.25,.1);opacity:0}45%{transform:perspective(700px) rotateX(70deg) scale(1,.2);opacity:1}100%{transform:none}}
@@ -306,20 +306,20 @@ return `<div class="hero"><h2 class="ht"><span>Lapar?</span><span>Let's hunt, Fo
 function stats(){const mm=S.logs.filter(l=>l.d.startsWith(td().slice(0,7)));return `<div class="stats"><div><b>${mm.length}</b><span>outings this month</span></div><div><b>$${mm.reduce((a,l)=>a+l.amt,0).toFixed(0)}</b><span>spent this month</span></div><div><b>${all().length}</b><span>spots saved</span></div></div>`}
 function decide(){
 return `${modeBar()}${hero()}<p class="intro">Answer these 3 questions<br>to use the roulette wheel below</p>
-<div class="card bud">${H2('<span class="qn" id="qn1">1</span>What’s today’s budget?')}<div class="bv" id="pl"></div>
+<div class="card bud">${H2('<span class="qn">Step 1:</span>Budget?<span class="qk" id="qk1">✓</span>')}<div class="bv" id="pl"></div>
 <small>Min</small><input type="range" min="0" max="60" value="${V.lo}" oninput="V.lo=Math.min(+this.value,V.hi);this.value=V.lo;V.a1=true;res()">
 <small>Max</small><input type="range" min="0" max="60" value="${V.hi}" oninput="V.hi=Math.max(+this.value,V.lo);this.value=V.hi;V.a1=true;res()">
 <div>${TIERS.map((x,i)=>`<span class="chip ${V.a1&&V.lo==x[1]&&V.hi==x[2]?'on':''}" onclick="tier(${i})">${x[0]}</span>`).join('')}</div></div>
-<div class="card">${H2('<span class="qn" id="qn2">2</span>What are we vibing today?')}
+<div class="card">${H2('<span class="qn">Step 2:</span>What’s the vibe today?<span class="qk" id="qk2">✓</span>')}
 <div class="mood">${CR.map((c,i)=>`<button class="${V.mood==i?'on':''}" style="--vc:${c.c}" onclick="crave(${i})"><img src="${VIMG[i]}" alt=""><span class="vt"><b>${c.t}</b><em>${c.g}</em><small>${c.d}</small></span></button>`).join('')}</div></div>
-<div class="card">${H2('<span class="qn" id="qn3">3</span>Now further fine tune it!')}<p class="hint ifn">(if needed)</p>
+<div class="card">${H2('<span class="qn">Step 3:</span>Fine tune it!<span class="qk" id="qk3">✓</span>')}<p class="hint ifn">(if needed)</p>
 <input type="text" id="q1" placeholder="Search name, cuisine or area" value="${esc(V.q)}" oninput="V.q=this.value;V.a3=true;const m=$('mq');if(m)m.value=this.value;res()">
 <label>Location (none = anywhere in Brunei)</label>
 <div>${DIST.map(d=>`<span class="chip ${V.loc.has(d)?'on':''}" onclick="tl('${d}')">${d}</span>`).join('')}</div>
 <label>Extras</label>
 <div>${[['hrt','Hearted'],['unv','Never been'],['fav','Crew faves'],['try','To try'],['late','Open past 12am'],['gm','Hidden gems'],['nw','New openings']].map(([k,l])=>`<span class="chip ${V[k]?'on':''}" onclick="V.${k}=!V.${k};V.a3=true;render()">${l}</span>`).join('')}<span class="chip done ${V.a3?'on':''}" onclick="V.a3=true;render()">✓ All set</span></div>
 ${V.mood>=0?`<div class="active"><span>Vibe: ${esc(CR[V.mood].t)}</span><button class="btn s" onclick="clearMood()">Clear</button></div>`:''}</div>
-<div class="card" id="wc">${H2('Roulette wheel')}<div class="wbox"><svg class="ptr" viewBox="0 0 30 34" aria-hidden="true"><path fill="currentColor" stroke="#fff" stroke-width="2.5" d="M15 32 3 10a12 12 0 1124 0z"/></svg><canvas id="wh" width="600" height="600" role="img" aria-label="Restaurant roulette wheel"></canvas></div>
+<div class="card" id="wc">${H2('<span class="qn">Step 4:</span>Now time to spin the wheel!')}<div class="wbox"><svg class="ptr" viewBox="0 0 30 34" aria-hidden="true"><path fill="currentColor" stroke="#fff" stroke-width="2.5" d="M15 32 3 10a12 12 0 1124 0z"/></svg><canvas id="wh" width="600" height="600" role="img" aria-label="Restaurant roulette wheel"></canvas></div>
 <div class="wcap" id="wcap"></div><button class="btn" id="wb" onclick="spin()" disabled>Answer the 3 questions first</button><p class="need" id="wneed"></p></div>
 <div id="pk"></div>
 <div class="card"><div class="hrow">${H2('Matches <span id="cnt"></span>')}<button class="btn s pk" onclick="goAdd()">+ Add a place</button></div><div class="sbar"><input type="search" id="mq" placeholder="Search restaurants & cafés" value="${esc(V.q)}" onkeydown="if(event.key=='Enter'){event.preventDefault();doSearch()}" enterkeyhint="search"><button class="btn sbtn" onclick="doSearch()" aria-label="Search">${SRCH}<span>Search</span></button></div><div id="res"></div></div>
@@ -382,8 +382,8 @@ W.busy=false;const r=m[i],p=$('pk');if(!p)return;reveal(r);
 p.innerHTML=`<div class="card big">${H2('The wheel has spoken')}<b>${esc(r.n)}</b><br><small>${esc(r.c)}${r.a?' · '+esc(r.a):''} · ${pr(r)}${r.note?' · '+esc(r.note):''}</small><br><button class="btn" onclick="goLog('${r.id}')">We went! Log it</button></div>`})(t0)}
 /* the wheel unlocks once budget, vibe and fine-tune are all answered */
 const ready=()=>!!(V.a1&&V.mood>=0&&V.a3);
-function updSpin(){const b=$('wb');[[1,V.a1],[2,V.mood>=0],[3,V.a3]].forEach(([n,ok])=>{const q=$('qn'+n);if(q){q.textContent=ok?'✓':n;q.classList.toggle('ok',!!ok)}});
-if(!b||W.busy||W.rev)return;const ok=ready(),miss=[!V.a1&&'1 budget',V.mood<0&&'2 vibe',!V.a3&&'3 fine tune<br>(or tap ✓ All set)'].filter(Boolean);
+function updSpin(){const b=$('wb');[[1,V.a1],[2,V.mood>=0],[3,V.a3]].forEach(([n,ok])=>{const q=$('qk'+n);if(q)q.classList.toggle('on',!!ok)});
+if(!b||W.busy||W.rev)return;const ok=ready(),miss=[!V.a1&&'Step 1: Budget',V.mood<0&&'Step 2: Vibe',!V.a3&&'Step 3: Fine tune<br>(or tap ✓ All set)'].filter(Boolean);
 b.disabled=!ok;b.textContent=ok?'Spin the wheel':'Answer the 3 questions first';const n=$('wneed');if(n)n.innerHTML=ok?'':'Still to answer:<br>'+miss.join('<br>')}
 /* doodle hearts: the i's in headings get heart dots; headings without an i get a heart perched on the first letter */
 const DH='<svg viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C7 16.7 2.2 13.4 2.2 8.3 2.2 5 4.6 2.6 7.5 2.6c2 0 3.6 1.1 4.5 2.8.9-1.7 2.5-2.8 4.5-2.8 2.9 0 5.3 2.4 5.3 5.7 0 5.1-4.8 8.4-9.8 12.2z" fill="#ff8fbf" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>';
